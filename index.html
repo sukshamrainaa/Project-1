@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<!-- Created By Suksham Raina (2019) -->
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bhardwaj International And Domestic Courier Services</title>
+  <meta name="description" content="Bhardwaj International And Domestic Courier Services provides express delivery services throughout India and across the globe. We understand the different needs
+  of our customers.">
+  <meta name="keyword" content="Bhardwaj Courier And Travel Agencies">
+  <link rel="stylesheet" href="img">
+  <link rel="shortcut icon" type="image/png" href="img/favicon.png">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    ::-webkit-scrollbar {
+      width: 10px;
+    }
+
+    ::-webkit-scrollbar-track {
+      background: #f1f1f1;
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: #888;
+    }
+
+    ::selection {
+      background: rgb(0, 123, 255, 0.3);
+    }
+
+    .content {
+      max-width: 1250px;
+      margin: auto;
+      padding: 0 30px;
+    }
+
+    .navbar {
+      position: fixed;
+      width: 100%;
+      z-index: 2;
+      padding: 25px 0;
+      transition: all 0.03s ease;
+      background: black;
+
+    }
+
+    .navbar.sticky {
+
+      background: black;
+      padding: 10px 0;
+      box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.1);
+    }
+
+    .navbar .content {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .navbar .logo a {
+      color: #fff;
+      font-size: 30px;
+      font-weight: 600;
+      text-decoration: none;
+    }
+
+    .navbar .menu-list {
+      display: inline-flex;
+    }
+
+    .menu-list li {
+      list-style: none;
+    }
+
+    .menu-list li a {
+      color: #fff;
+      font-size: 18px;
+      font-weight: 500;
+      margin-left: 25px;
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+
+    .menu-list li a:hover {
+      color: #007bff;
+    }
+
+    .banner {
+      height: auto;
+      width: auto;
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+
+    }
+
+    .about {
+      padding: 30px 0;
+    }
+
+    .title {
+      color: #cfc900;
+      font-size: 38px;
+      font-weight: 700;
+    }
+
+    .text {
+      color: white;
+    }
+
+    .about p {
+      padding-top: 20px;
+      text-align: justify;
+    }
+
+    .icon {
+      color: #fff;
+      font-size: 20px;
+      cursor: pointer;
+      display: none;
+    }
+
+    .menu-list .cancel-btn {
+      position: absolute;
+      right: 30px;
+      top: 20px;
+    }
+
+    @media (max-width: 1230px) {
+      .content {
+        padding: 0 60px;
+      }
+    }
+
+    @media (max-width: 1100px) {
+      .content {
+        padding: 0 40px;
+      }
+    }
+
+    @media (max-width: 900px) {
+      .content {
+        padding: 0 30px;
+      }
+    }
+
+    @media (max-width: 868px) {
+      body.disabled {
+        overflow: hidden;
+      }
+
+      .icon {
+        display: block;
+      }
+
+      .icon.hide {
+        display: none;
+      }
+
+
+      .navbar .menu-list {
+        position: fixed;
+        height: 100vh;
+        width: 100%;
+        max-width: 400px;
+        left: -100%;
+        top: 0px;
+        display: block;
+        padding: 40px 0;
+        text-align: center;
+        background: #222;
+        transition: all 0.3s ease;
+      }
+
+
+      .navbar.show .menu-list {
+        left: 0%;
+      }
+
+
+      .navbar .menu-list li {
+        margin-top: 45px;
+      }
+
+      .navbar .menu-list li a {
+        font-size: 23px;
+        margin-left: -100%;
+        transition: 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+
+      }
+
+
+      .navbar.show .menu-list li a {
+        margin-left: 0px;
+      }
+    }
+
+    @media (max-width: 380px) {
+      .navbar .logo a {
+        font-size: 27px;
+      }
+    }
+  </style>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+
+
+    .img-slider {
+      position: relative;
+      width: 800px;
+      height: 500px;
+      margin: 10px;
+      background: #1D212B;
+    }
+
+    .img-slider .slide {
+      z-index: 1;
+      position: absolute;
+      width: 100%;
+      clip-path: circle(0% at 0 50%);
+    }
+
+    .img-slider .slide.active {
+      clip-path: circle(150% at 0 50%);
+      transition: 3s;
+      transition-property: clip-path;
+    }
+
+    .img-slider .slide img {
+      z-index: 1;
+      width: 100%;
+      border-radius: 5px;
+    }
+
+
+    .img-slider .navigation {
+      z-index: 2;
+      position: absolute;
+      display: flex;
+      bottom: 30px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    .img-slider .navigation .btn {
+      background: rgba(255, 255, 255, 0.5);
+      width: 12px;
+      height: 12px;
+      margin: 10px;
+      border-radius: 50%;
+      cursor: pointer;
+    }
+
+    .img-slider .navigation .btn.active {
+      background: #2696E9;
+      box-shadow: 0 0 2px rgba(0, 0, 0, 0.5);
+    }
+
+    @media (max-width: 820px) {
+      .img-slider {
+        width: 600px;
+        height: 375px;
+      }
+
+      .img-slider .navigation {
+        bottom: 25px;
+      }
+
+      .img-slider .navigation .btn {
+        width: 10px;
+        height: 10px;
+        margin: 8px;
+      }
+    }
+
+    @media (max-width: 620px) {
+      .img-slider {
+        width: 400px;
+        height: 250px;
+      }
+
+
+
+      .img-slider .navigation {
+        bottom: 15px;
+      }
+
+      .img-slider .navigation .btn {
+        width: 8px;
+        height: 8px;
+        margin: 6px;
+      }
+    }
+
+    @media (max-width: 420px) {
+      .img-slider {
+        width: 320px;
+        height: 200px;
+      }
+
+      .img-slider .navigation {
+        bottom: 10px;
+      }
+    }
+  </style>
+</head>
+
+<body style="background-color:#000000;">
+  <nav class="navbar">
+    <div class="content">
+      <div class="logo">
+        <a href="#" style="font-size: 18px;"><img src="img/logo.png" alt="logo"
+            style="width:30px;position: relative;top: 6px;">&nbsp; Bhardwaj Courier
+          <br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; And Travel Agencies</a>
+      </div>
+      <ul class="menu-list">
+        <div class="icon cancel-btn">
+
+          <span>&#10005;</span>
+
+
+        </div>
+
+        <li><a href="#home" target="_blank">Home</a></li>
+        <li><a href="#aboutus" target="_blank">About Us</a></li>
+        <li><a href="#services" target="_blank">Services</a></li>
+        <li><a href="#track" target="_blank">Track</a></li>
+        <li><a href="#contactus" target="_blank">Contact Us</a></li>
+
+      </ul>
+
+
+      <div class="icon menu-btn">
+        <span>&#9776;</span>
+      </div>
+    </div>
+  </nav>
+  <br>
+  <br>
+  <div>
+    <div id="home"></div>
+    <div class="img-slider" style="width: 95%;overflow-y: hidden;">
+
+      <div class="slide active"><img src="img/banner.png" alt="banner" style="max-height: 500px;min-height: 220px;">
+      </div>
+      <div class="slide">
+        <img
+          src="https://www.thestatesman.com/wp-content/uploads/2020/12/delhivery-website.jpg"
+          alt="banner" style="max-height: 560px;min-height: 240px;">
+      </div>
+      <div class="slide">
+        <img src="https://chinapurchasingagent.com/wp-content/uploads/2018/12/DHL-express.jpg" alt="banner"
+          style="max-height: 500px;">
+      </div>
+      <div class="slide">
+        <img src="https://postandparcel.info/wp-content/uploads/2016/01/Aramex20Jan16.jpg" alt="banner">
+      </div>
+      <div class="navigation" style="display: none;">
+        <div class="btn active"></div>
+        <div class="btn"></div>
+        <div class="btn"></div>
+        <div class="btn"></div>
+        <div class="btn"></div>
+        <div class="btn"></div>
+      </div>
+    </div>
+
+  </div>
+  <br>
+  <br>
+
+
+
+
+
+  <div class="about">
+    <div class="content">
+
+      <div class="title" id="aboutus">About Us</div>
+      <br>
+      <ul class="text">
+        <li>Bhardwaj courier services is proud to have an experience of more than 5 years.</li>
+        <li>Currently, we handle many consignments whilst serving globally.</li>
+        <li>Franchises that we have: Trackon , Aramex , Delhivery , Dtdc And DHL.</li>
+        <li>National Courier - Trackon , Delhivery And Dtdc</li>
+        <li>International Courier - Aramex and DHL.</li>
+        <br>
+        <li>Owner - </li>
+      </ul>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+
+
+
+      <div class="title" id="services">Services</div>
+      <p class="text">
+        we provides express delivery services throughout India and across the globe. We understand the different needs
+        of our customers. <br>
+        Our services include:
+      </p>
+      <br>
+      <h3 class="text" style="color:rgb(3 218 239);">International And Domestic Delivery Solutions – Documents &
+        Parcels:</h3>
+      <br>
+      <ul class="text">
+        <li><strong>Prime Track (Trackon Courier Only):</strong> We provide a guaranteed next or second business day
+          delivery across all metros and cities in India for your valuable belongings.</li>
+        <li><strong>Express Standard:</strong> We ensure express deliveries at an optimal cost through air, rail and
+          road.</li>
+        <li><strong>Air Express Cargo:</strong> We offer an express delivery solution for shipments weighing more than
+          100 kgs across globally.</li>
+        <li><strong>Surface Express Cargo:</strong> We offer an economical delivery solution for heavy shipments which
+          requires special arrangements such as big vehicles and material handling equipment.</li>
+      </ul>
+      <br>
+      <h3 style="color: rgb(3 218 239);">Other Services :</h3>
+      <br>
+      <ul class="text">
+        <li><strong>Bookings:</strong> Hotel Booking , Tickets ( train,bus,flight,etc.)</li>
+        <li> <strong> Shri Mata Vaishno Devi Shrine Board Services:</strong> Chopper Services,Yatra Parchi. </li>
+        <li> <strong> Online Shopping Services:</strong> Amazon,Flipkart,Snapdeal,Tata Cliq,Myntra etc. <br>
+          ( If any of your item is not coming to Rajouri then contact us.) </li>
+        <li> <strong>Tour Packages:</strong> International And Domestic Tour Packages At Best Price.</li>
+        <li><strong>Agencies:</strong> Goibibo And Make My Trip.</li>
+        <li> <strong>Pickup And Drop Services:</strong> Door To Door Services Also Available</li>
+      </ul>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+
+      <div class="title" id="track">Track</div>
+      <br>
+      <p>
+      <ul class="text">
+        <li> You can track your consignment by clicking "truck logo": </li>
+      </ul>
+      </p>
+      <br>
+      <div><a href="https://trackcourier.io/" target="_blank"><i class="fa fa-truck" aria-hidden="true"
+            style="font-size: 30px;color: white;"></i></a></div>
+      <br>
+      <p class="text" style="font-style: italic;">
+        (After clicking enter your tracking number and then select your shipping courier)</p>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <div class="title" id="contactus">Contact Us</div>
+      <br>
+      <div class="text">
+        <i class="fa fa-map-marker" aria-hidden="true" style="font-size: 20px;">&nbsp;</i> <a class="text"
+          href="https://maps.app.goo.gl/WYU3ikmAdC61a8HJA" target="_blank">Ward no, 11, opp. Bhatia Cloth house,
+          Rajouri,
+          Jammu and Kashmir 185131</a>
+        <div>
+          <p><iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3331.9756905344093!2d74.31063431519726!3d33.37170068079651!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x391e2fb52623aca9%3A0x1b81647ad7ce9004!2sBhardwaj%20international%20%26%20domestic%20Courier%20Services!5e0!3m2!1sen!2sin!4v1631966612713!5m2!1sen!2sin"
+              width="250" height="250" style="border:0;" allowfullscreen="" loading="lazy"></iframe></p>
+        </div>
+        <br>
+        <br>
+        <a href="tel:" target="_blank"> <i class="fa fa-phone-square" aria-hidden="true"
+            style="color: white;font-size: 30px;"></i></a>
+
+        &nbsp;&nbsp;&nbsp;&nbsp;
+        <a href="mailto:" target="_blank"><i class="fa fa-envelope"
+            style="font-size:30px;color: white;"></i></a>
+        <br>
+        <br>
+       
+        <p class="text" style="color: rgb(3 218 239);text-align: center;"><strong>THANKYOU FOR CHOOSING US <br> WE ARE
+            HAPPY TO SERVE
+            YOU</strong></p>
+        <br>
+        <hr>
+        <br>
+        <div>
+
+        </div>
+        <div>
+          <footer style="text-align: center;">
+            Copyright © 2023 Bhardwaj Courier Services Pvt Ltd. All Rights Reserved.
+          </footer>
+          <footer style="text-align: center;">Handcrafted with 💗 by Suksham Raina</footer>
+          <div>
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <script>
+      const body = document.querySelector("body");
+      const navbar = document.querySelector(".navbar");
+      const menuBtn = document.querySelector(".menu-btn");
+      const cancelBtn = document.querySelector(".cancel-btn");
+      menuBtn.onclick = () => {
+        navbar.classList.add("show");
+        menuBtn.classList.add("hide");
+        body.classList.add("disabled");
+      }
+      cancelBtn.onclick = () => {
+        body.classList.remove("disabled");
+        navbar.classList.remove("show");
+        menuBtn.classList.remove("hide");
+
+      }
+      window.onscroll = () => {
+        this.scrollY > 20 ? navbar.classList.add("sticky") : navbar.classList.remove("sticky");
+      }
+
+
+    </script>
+    <script type="text/javascript">
+      var slides = document.querySelectorAll('.slide');
+      var btns = document.querySelectorAll('.btn');
+      let currentSlide = 1;
+
+      // Javascript for image slider manual navigation
+      var manualNav = function (manual) {
+        slides.forEach((slide) => {
+          slide.classList.remove('active');
+
+          btns.forEach((btn) => {
+            btn.classList.remove('active');
+          });
+        });
+
+
+        slides[manual].classList.add('active');
+        btns[manual].classList.add('active');
+      }
+
+      btns.forEach((btn, i) => {
+        btn.addEventListener("click", () => {
+          manualNav(i);
+          currentSlide = i;
+        });
+      });
+
+      // Javascript for image slider autoplay navigation
+      var repeat = function (activeClass) {
+        let active = document.getElementsByClassName('active');
+        let i = 1;
+
+        var repeater = () => {
+          setTimeout(function () {
+            [...active].forEach((activeSlide) => {
+              activeSlide.classList.remove('active');
+            });
+
+            slides[i].classList.add('active');
+            btns[i].classList.add('active');
+            i++;
+
+            if (slides.length == i) {
+              i = 0;
+            }
+            if (i >= slides.length) {
+              return;
+            }
+            repeater();
+          }, 3800);
+        }
+        repeater();
+      }
+      repeat();
+    </script>
+
+
+</body>
+
+</html>
